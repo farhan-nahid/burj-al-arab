@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "clsx": "^1.1.1",
     "clx": "^1.0.0",
-    "firebase": "^7.20.0",
+    "firebase": "^9.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

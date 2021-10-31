@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
-
+import React from 'react';
+import useFirebase from '../../hooks/useFirebase';
 
 const Login = () => {
-    return (
-        <div>
-            <h1>This is Login</h1>
-        </div>
-    );
+  const { signInUsingGoogle } = useFirebase();
+  return (
+    <div>
+      <h1>This is Login</h1>
+      <button onClick={signInUsingGoogle}>Google</button>
+    </div>
+  );
 };
 
 export default Login;
