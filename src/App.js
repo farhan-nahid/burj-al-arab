@@ -6,6 +6,7 @@ import Book from './components/Book/Book';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
 
 function App() {
@@ -18,9 +19,12 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route path='/home' component={Home} />
           <Route path='/login' component={Login} />
-          <Route path='/book/:bedType'>
+          <PrivateRoute path='/book/:bedType'>
             <Book />
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path='/book'>
+            <Book />
+          </PrivateRoute>
         </Switch>
       </Router>
     </AuthProvider>
