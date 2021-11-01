@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Book from './components/Book/Book';
@@ -11,6 +12,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+        <Toaster />
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />

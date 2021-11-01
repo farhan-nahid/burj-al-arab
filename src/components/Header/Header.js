@@ -8,7 +8,7 @@ import './Header.css';
 
 const Header = () => {
   const { loggedInUser, logOut } = useAuth();
-
+  console.log(loggedInUser);
   return (
     <div
       style={{
@@ -37,7 +37,7 @@ const Header = () => {
             <>
               <li>{loggedInUser.displayName}</li>
               <li>
-                <Button variant='outlined' color='error' onClick={logOut}>
+                <Button onClick={logOut} variant='contained' color='error'>
                   Log out
                 </Button>
               </li>

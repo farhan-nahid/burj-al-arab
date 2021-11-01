@@ -14,6 +14,14 @@ const useFirebase = () => {
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
+  const signInUsingGoogle = () => {
+    return signInWithPopup(auth, googleProvider);
+  };
+
+  const logOut = () => {
+    signOut(auth).then(() => setLoggedInUser(null));
+  };
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -21,14 +29,6 @@ const useFirebase = () => {
       }
     });
   }, [auth]);
-
-  const signInUsingGoogle = () => {
-    return signInWithPopup(auth, googleProvider);
-  };
-
-  const logOut = () => {
-    signOut(auth, () => loggedInUser(null));
-  };
 
   return { loggedInUser, signInUsingGoogle, logOut };
 };
